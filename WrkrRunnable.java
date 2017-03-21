@@ -22,16 +22,6 @@ public class WrkrRunnable implements Runnable{
 			InputStream inputstrm  = clntSocket.getInputStream();
 			OutputStream outputstrm = clntSocket.getOutputStream();
 
-			try
-			{
-				// Delay between starting threads, if desired
-				Thread.sleep(0);
-			}
-			catch (InterruptedException e)
-			{
-				e.printStackTrace();
-			}
-
 			endTime = System.currentTimeMillis();
 
 			outputstrm.write(("OK\n\nWrkrRunnable: " + this.txtFrmSrvr + " - " + (endTime - startTime)).getBytes());
